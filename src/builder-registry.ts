@@ -1,5 +1,6 @@
 "use client";
 import { builder, Builder } from "@builder.io/react";
+import CaseStudies from "./components/builder/Case";
 import Counter from "./components/builder/Counter/Counter";
 import Hero from "./components/builder/Hero";
 import Insights from "./components/builder/Insights";
@@ -46,6 +47,24 @@ Builder.registerComponent(Hero, {
 
 Builder.registerComponent(Insights, {
   name: "Insights",
+  inputs: [
+    {
+      name: "description",
+      type: "string",
+    },
+    {
+      name: "tag",
+      type: "string",
+    },
+    {
+      name: "title",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(CaseStudies, {
+  name: "CaseStudies",
   inputs: [
     {
       name: "description",
