@@ -9,14 +9,17 @@
   /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: #000000;
+  --color-secondary: #595959;
+  --color-accent: #212433;
   --color-mint: #00C7BE;
   --color-auxiliary: #B3B3B3;
   --color-teal: #30B0C7;
   --color-tertiary: #595959;
 
-    /* Fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Fonts */
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
 }
 
 @media (prefers-color-scheme: light) {
@@ -29,5 +32,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
 }

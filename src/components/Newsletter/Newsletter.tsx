@@ -3,7 +3,7 @@ import React from "react";
 
 const Newsletter = ({ content }: { content: string }) => {
   return (
-    <div className="bg-foreground text-background justify-center  p-3 font-thin inline-flex gap-1 items-center">
+    <div className="bg-accent text-white inline-flex items-center justify-center gap-1 p-3 font-thin">
       {content}
       <ArrowUpRight className="text-teal" />
     </div>

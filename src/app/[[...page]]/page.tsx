@@ -13,14 +13,15 @@ interface PageProps {
 export default async function Page(props: PageProps) {
   const builderModelName = "page";
 
-  const {page} = await props.params
+  const { page } = await props.params;
+  const urlPath = "/" + (page?.length > 0 ? page.join("/") : "");
 
   const content = await builder
     // Get the page content from Builder with the specified options
     .get(builderModelName, {
       userAttributes: {
         // Use the page path specified in the URL to fetch the content
-        urlPath: "/" + (page?.join("/") || ""),
+        urlPath,
       },
     })
     // Convert the result to a promise
