@@ -1,3 +1,5 @@
+import BlogContent from "@/components/BuilderContent.Client";
+import Header from "@/components/Header/Header";
 import { builder } from "@builder.io/sdk";
 import { notFound } from "next/navigation";
 
@@ -7,6 +9,16 @@ interface Props {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateStaticParams() {
+  const blogs = await builder.getAll("blog", {
+    fields: "data.slug",
+  });
+
+  return blogs.map((blog) => ({
+    slug: blog.data?.slug,
+  }));
 }
 
 export default async function BlogPage({ params }: Props) {
@@ -19,10 +31,16 @@ export default async function BlogPage({ params }: Props) {
       options: {
         noTargeting: true,
       },
+      enrich: true,
     })
     .toPromise();
 
   if (!content) return notFound();
 
-  return <div>{content.data.title}</div>;
+  return (
+    <>
+      <Header />
+      <BlogContent content={content} />
+    </>
+  );
 }

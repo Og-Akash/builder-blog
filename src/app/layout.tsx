@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import BaseLayout from "@/components/Base";
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],

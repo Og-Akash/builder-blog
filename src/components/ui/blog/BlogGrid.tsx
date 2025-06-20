@@ -7,9 +7,11 @@ import { builder } from "@builder.io/sdk";
 export default function BlogGrid() {
   const { data: blogs, isPending } = useQuery({
     queryKey: ["blogs"],
-    queryFn: () => builder.getAll("blog"),
+    queryFn: () =>
+      builder.getAll("blog", {
+        enrich: true,
+      }),
   });
- 
 
   if (isPending) {
     return <div>Loading...</div>;

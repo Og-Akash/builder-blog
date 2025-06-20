@@ -1,29 +1,29 @@
 import { ChevronDown, Moon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { use } from "react";
 import Button from "../ui/Button";
+import { getBuilderContentByModel } from "@/helpers/builder";
 
-interface HeaderProps {
-  logoUrl?: string;
-  links?: { label: string; url: string; hasmore: boolean }[];
-}
+export default function Header() {
+  const headerData = use(getBuilderContentByModel("global-header"));
 
-export default function Header({ logoUrl, links }: HeaderProps) {
   return (
     <header className="flex items-center justify-between bg-white px-6 py-4 shadow-md">
-      <Image width={100} height={100} src={logoUrl || "/logo.svg"} alt="Logo" />
+      <Image width={100} height={100} src={headerData.data.logo || "/logo.svg"} alt="Logo" />
       <nav className="flex gap-6">
-        {links?.map((link, idx) => (
-          <Link
-            key={idx}
-            href={link.url}
-            className="text-tertiary inline-flex items-center gap-1 text-sm font-medium"
-          >
-            {link.label}
-            {link.hasmore && <ChevronDown size={18} />}
-          </Link>
-        ))}
+        {headerData.data?.navLinks.map(
+          (link: { label: string; url: string; hasMore?: boolean }, idx: number) => (
+            <Link
+              key={idx}
+              href={link.url}
+              className="text-tertiary inline-flex items-center gap-1 text-sm font-medium"
+            >
+              {link.label}
+              {link.hasMore && <ChevronDown size={18} />}
+            </Link>
+          ),
+        )}
       </nav>
       <div className="flex items-center gap-4">
         <Button variant="outline">Login</Button>
