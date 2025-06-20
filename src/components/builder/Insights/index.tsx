@@ -28,7 +28,7 @@ const Insights = ({ tag, title, description }: InsightsProps) => {
 
   return (
     <div className="bg-surface-neutral p-16">
-      <div className="mx-auto flex max-w-5xl flex-col gap-8">
+      <div className="flex flex-col gap-8">
         <div className="mx-auto flex max-w-2xl flex-col space-y-4">
           <div className="text-center">
             <span className="text-mint text-sm font-bold">{tag}</span>
@@ -37,7 +37,7 @@ const Insights = ({ tag, title, description }: InsightsProps) => {
           <p className="text-secondary text-xl">{description}</p>
         </div>
         {/* Render all the insights blogs */}
-        <BlogGrid blogs={data} isPending={isPending} />
+        <BlogGrid blogs={data} isPending={isPending} variant="secondary" />
       </div>
     </div>
   );

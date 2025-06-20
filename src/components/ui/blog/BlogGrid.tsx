@@ -4,9 +4,10 @@ import BlogCard from "./BlogCard";
 interface BlogGridProps {
   blogs: BuilderContent[] | undefined;
   isPending: boolean;
+  variant? : "primary" | "secondary" 
 }
 
-export default function BlogGrid({ blogs, isPending }: BlogGridProps) {
+export default function BlogGrid({ blogs, isPending , variant = "primary" }: BlogGridProps) {
   if (isPending) {
     return <div>Loading...</div>;
   }
@@ -18,7 +19,7 @@ export default function BlogGrid({ blogs, isPending }: BlogGridProps) {
   return (
     <div>
       {
-        <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-6xl mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {blogs?.map((blog) => {
             return (
               <BlogCard
@@ -31,7 +32,7 @@ export default function BlogGrid({ blogs, isPending }: BlogGridProps) {
                 createdAt={blog.data?.publishedAt}
                 alt={blog.data?.title}
                 slug={blog.data?.slug}
-                variant={blog.data?.variant}
+                variant={variant}
                 category={blog.data?.category}
               />
             );

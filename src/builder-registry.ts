@@ -2,6 +2,7 @@
 import { builder, Builder } from "@builder.io/react";
 import CaseStudies from "./components/builder/Case";
 import Counter from "./components/builder/Counter/Counter";
+import FaqSection from "./components/builder/Faq/Faqs";
 import Hero from "./components/builder/Hero";
 import Insights from "./components/builder/Insights";
 import Newsletter from "./components/builder/Newsletter/Newsletter";
@@ -55,6 +56,7 @@ Builder.registerComponent(Insights, {
     {
       name: "tag",
       type: "string",
+      defaultValue: "Blog",
     },
     {
       name: "title",
@@ -73,10 +75,28 @@ Builder.registerComponent(CaseStudies, {
     {
       name: "tag",
       type: "string",
+      defaultValue: "Blog",
     },
     {
       name: "title",
       type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(FaqSection, {
+  name: "FaqSection",
+  inputs: [
+    { name: "tag", type: "text", defaultValue: "FAQ" },
+    { name: "title", type: "text", defaultValue: "Frequently asked questions" },
+    { name: "description", type: "text", defaultValue: "Frequently asked questions" },
+    {
+      name: "faqs",
+      type: "list",
+      subFields: [
+        { name: "question", type: "text" },
+        { name: "answer", type: "longText" },
+      ],
     },
   ],
 });
