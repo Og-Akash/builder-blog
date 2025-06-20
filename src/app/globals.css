@@ -11,6 +11,7 @@
   --color-foreground: var(--foreground);
   --color-primary: #000000;
   --color-secondary: #595959;
+  --color-surface-neutral: #F1F1F3;
   --color-accent: #212433;
   --color-mint: #00C7BE;
   --color-auxiliary: #B3B3B3;

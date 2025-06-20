@@ -1,8 +1,9 @@
 "use client";
 import { builder, Builder } from "@builder.io/react";
-import Counter from "./components/Counter/Counter";
-import Hero from "./components/Hero";
-import Newsletter from "./components/Newsletter/Newsletter";
+import Counter from "./components/builder/Counter/Counter";
+import Hero from "./components/builder/Hero";
+import Insights from "./components/builder/Insights";
+import Newsletter from "./components/builder/Newsletter/Newsletter";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -39,6 +40,24 @@ Builder.registerComponent(Hero, {
       name: "subheadng",
       type: "string",
       required: true,
+    },
+  ],
+});
+
+Builder.registerComponent(Insights, {
+  name: "Insights",
+  inputs: [
+    {
+      name: "description",
+      type: "string",
+    },
+    {
+      name: "tag",
+      type: "string",
+    },
+    {
+      name: "title",
+      type: "string",
     },
   ],
 });

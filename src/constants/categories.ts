@@ -1,4 +1,4 @@
-enum Category {
+export enum Category {
     ALL = 'all',
     HEALTHCARE = 'Healthcare trends',
     AI_INSIGHTS = 'AI Insights',

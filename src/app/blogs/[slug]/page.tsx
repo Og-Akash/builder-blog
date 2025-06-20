@@ -1,5 +1,4 @@
 import BlogContent from "@/components/BuilderContent.Client";
-import Header from "@/components/Header/Header";
 import { builder } from "@builder.io/sdk";
 import { notFound } from "next/navigation";
 
@@ -39,7 +38,6 @@ export default async function BlogPage({ params }: Props) {
 
   return (
     <>
-      <Header />
       <BlogContent content={content} />
     </>
   );

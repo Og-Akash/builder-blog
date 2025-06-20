@@ -4,8 +4,7 @@ import { getBuilderContentByModel } from "@/helpers/builder"; // your existing f
 
 const Footer = () => {
   const footerData = use(getBuilderContentByModel("footer-links"));
-  const { footerlinks = [], bottomlinks = [], copyrightText } = footerData?.data || {};
-  console.log("bottomlinks", footerData);
+  const { footerlinks = [], bottomlinks = [], copyrightText } = footerData?.data || {};;
 
   return (
     <footer className="pt-10 pb-6 text-sm text-gray-500">

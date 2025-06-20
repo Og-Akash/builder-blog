@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between bg-white px-6 py-4 shadow-md">
-      <Image width={100} height={100} src={headerData.data.logo || "/logo.svg"} alt="Logo" />
+      <Image width={100} height={100} src={headerData.data.logo || "/logo.png"} alt="Logo" />
       <nav className="flex gap-6">
         {headerData.data?.navLinks.map(
           (link: { label: string; url: string; hasMore?: boolean }, idx: number) => (
