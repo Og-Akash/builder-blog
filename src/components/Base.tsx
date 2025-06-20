@@ -1,6 +1,7 @@
 import React from "react";
 import QueryClient from "./providers/QueryClient";
 import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 // import Footer from "../ui/Footer";
 
 const BaseLayout = ({ children }: { children: React.ReactNode }) => {
@@ -11,6 +12,7 @@ const BaseLayout = ({ children }: { children: React.ReactNode }) => {
         <main className="relative mx-auto flex min-h-screen flex-col overflow-hidden">
           {children}
         </main>
+        <Footer />
       </QueryClient>
       {/* <Footer /> */}
     </>

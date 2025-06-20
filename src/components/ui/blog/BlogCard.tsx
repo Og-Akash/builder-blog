@@ -52,7 +52,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         <div>
           {authorName && <h3 className="text-secondary text-sm font-[500]">{authorName}</h3>}
         </div>
-        <div className="bg-mint rounded-full px-2 py-1 text-sm text-white">{category}</div>
+        <div className="bg-mint rounded-full px-2 py-1 text-[10px] text-white">{category}</div>
         <span className="text-[16px] text-secondary">
           {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
         </span>
