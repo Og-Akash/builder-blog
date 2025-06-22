@@ -6,6 +6,7 @@ import FaqSection from "./components/builder/Faq/Faqs";
 import Hero from "./components/builder/Hero";
 import Insights from "./components/builder/Insights";
 import Newsletter from "./components/builder/Newsletter/Newsletter";
+import Testimonial from "./components/builder/Testimonial/Testimonial";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -96,6 +97,21 @@ Builder.registerComponent(FaqSection, {
       subFields: [
         { name: "question", type: "text" },
         { name: "answer", type: "longText" },
+      ],
+    },
+  ],
+});
+
+Builder.registerComponent(Testimonial, {
+  name: "Testimonial",
+  inputs: [
+    {
+      name: "testimonials",
+      type: "list",
+      subFields: [
+        { name: "quote", type: "text", defaultValue: "This is a testimonial quote." },
+        { name: "writer", type: "longText", defaultValue: "Akash Ghosh" },
+        { name: "company", type: "test", defaultValue: "Weframe Tech" },
       ],
     },
   ],

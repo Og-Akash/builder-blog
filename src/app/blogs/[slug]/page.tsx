@@ -1,4 +1,5 @@
 import BlogContent from "@/components/BuilderContent.Client";
+import { getBlogContent, getBlogMetadata } from "@/helpers/seo";
 import { builder } from "@builder.io/sdk";
 import { notFound } from "next/navigation";
 
@@ -41,4 +42,16 @@ export default async function BlogPage({ params }: Props) {
       <BlogContent content={content} />
     </>
   );
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const content = await getBlogContent(slug);
+  return getBlogMetadata({
+    data: {
+      description: content.data?.description,
+      title: content.data?.title,
+      poster: content.data?.poster,
+    },
+  });
 }

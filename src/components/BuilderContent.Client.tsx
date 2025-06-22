@@ -13,8 +13,6 @@ export default function BlogContent({ content }: Props) {
     <BuilderContent model="blog" content={content}>
       {(data, loading, fullContent) => (
         <>
-          <h1>{data.title}</h1>
-          <p>{data.authorName}</p>
           <RenderBuilderContent model="blog" content={fullContent} />
         </>
       )}

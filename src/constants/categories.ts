@@ -1,5 +1,5 @@
 export enum Category {
-    ALL = 'all',
+    ALL = 'View All',
     HEALTHCARE = 'Healthcare trends',
     AI_INSIGHTS = 'AI Insights',
     CASE_STUDIES = 'Case Studies',
@@ -8,7 +8,7 @@ export enum Category {
 
 
 export const categories = [
-    { id: Category.ALL, name: "All" },
+    { id: Category.ALL, name: "View All" },
     { id: Category.HEALTHCARE, name: "Healthcare trends" },
     { id: Category.AI_INSIGHTS, name: "AI Insights" },
     { id: Category.CASE_STUDIES, name: "Case Studies" },

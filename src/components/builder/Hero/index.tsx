@@ -22,10 +22,10 @@ const Hero = ({ heading, subheadng }: HeroProps) => {
   });
 
   return (
-    <div className="my-10">
+    <div className="my-10 space-y-6">
       <HeroHeader heading={heading} subHeading={subheadng} />
       <HeaderActions />
-        <BlogGrid blogs={blogs} isPending={isPending} />
+      <BlogGrid blogs={blogs} isPending={isPending} />
     </div>
   );
 };
