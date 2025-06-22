@@ -16,3 +16,26 @@ export interface Blog {
   id: string;
   data: BlogData[];
 }
+
+export interface Header {
+  logo: string;
+  navLinks: {
+    label: string;
+    url: string;
+    hasMore?: boolean;
+  }[];
+}
+export interface Footer {
+ footerlinks: {
+  title:string;
+  footerlink: {
+    label:string;
+    url:string;
+  }[]
+ }[];
+ copyrightText: string;
+ bottomlinks: {
+   lable:string;
+    url:string;
+ }[]
+}

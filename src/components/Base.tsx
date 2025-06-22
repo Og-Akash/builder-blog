@@ -1,8 +1,8 @@
 import React from "react";
 import QueryClient from "./providers/QueryClient";
-import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Newsletter from "./builder/Newsletter/Newsletter";
+import Header from "./Header";
 
 const BaseLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -15,7 +15,6 @@ const BaseLayout = ({ children }: { children: React.ReactNode }) => {
         </main>
         <Footer />
       </QueryClient>
-      {/* <Footer /> */}
     </>
   );
 };
