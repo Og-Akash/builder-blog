@@ -30,7 +30,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   category,
 }) => {
   return (
-    <div aria-label={title} className="relative flex w-[24rem] flex-col space-y-2 rounded-md p-3">
+    <div aria-label={title} className="relative flex min-w-[16rem] w-full flex-col space-y-2 rounded-md p-3">
       <Link href={`/blogs/${slug}`} className="absolute inset-0 z-10">
         <span className="sr-only">{title}</span>
       </Link>

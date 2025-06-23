@@ -27,14 +27,14 @@ const CaseStudies = ({ tag, title, description }: CaseStudiesProps) => {
   });
 
   return (
-    <div className="p-16">
+    <div className="p-2 lg:p-16">
       <div className="flex flex-col gap-8">
-        <div className="mx-auto flex max-w-2xl flex-col space-y-4">
+        <div className="mx-auto flex max-w-2xl flex-col space-y-2 max-md:text-center md:space-y-4">
           <div className="text-center">
             <span className="text-mint text-sm font-bold">{tag}</span>
           </div>
-          <h1 className="text-primary text-5xl font-[700]">{title}</h1>
-          <p className="text-secondary text-xl">{description}</p>
+          <h1 className="text-primary text-3xl font-[700] md:text-5xl">{title}</h1>
+          <p className="text-secondary text-base md:text-xl">{description}</p>
         </div>
         {/* Render all the insights blogs */}
         <BlogGrid blogs={data} isPending={isPending} variant="secondary" />

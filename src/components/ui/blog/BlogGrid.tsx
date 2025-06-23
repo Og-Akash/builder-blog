@@ -19,7 +19,7 @@ export default function BlogGrid({ blogs, isPending , variant = "primary" }: Blo
   return (
     <div>
       {
-        <div className="max-w-6xl mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-6xl mx-auto grid gap-2 lg:gap-4 md:grid-cols-2 lg:grid-cols-3">
           {blogs?.map((blog) => {
             return (
               <BlogCard
