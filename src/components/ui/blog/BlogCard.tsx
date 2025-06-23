@@ -31,7 +31,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
 }) => {
   return (
     <div aria-label={title} className="relative flex min-w-[16rem] w-full flex-col space-y-2 rounded-md p-3">
-      <Link href={`/blogs/${slug}`} className="absolute inset-0 z-10">
+      <Link href={`/blogs/${slug}`} prefetch={true} className="absolute inset-0 z-10">
         <span className="sr-only">{title}</span>
       </Link>
 
