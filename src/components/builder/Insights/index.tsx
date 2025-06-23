@@ -2,6 +2,7 @@
 
 import BlogGrid from "@/components/ui/blog/BlogGrid";
 import { Category } from "@/constants/categories";
+import { Blog } from "@/types/builder-types";
 import { builder } from "@builder.io/sdk";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
@@ -37,7 +38,7 @@ const Insights = ({ tag, title, description }: InsightsProps) => {
           <p className="text-secondary text-base md:text-xl">{description}</p>
         </div>
         {/* Render all the insights blogs */}
-        <BlogGrid blogs={data} isPending={isPending} variant="secondary" />
+        <BlogGrid blogs={data as Blog[]} isPending={isPending} variant="secondary" />
       </div>
     </div>
   );

@@ -49,3 +49,16 @@ export interface Footer {
     url: string;
   }[];
 }
+
+export type BlogQuery = {
+  [key: string]:
+    | string
+    | number
+    | boolean
+    | {
+        [key: string]: {
+          $regex: string;
+          $options: string;
+        };
+      }[];
+};

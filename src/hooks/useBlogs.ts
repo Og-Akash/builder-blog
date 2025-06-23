@@ -3,6 +3,8 @@ import { useQuery } from "@tanstack/react-query";
 import { builder } from "@builder.io/sdk";
 import { useDebounce } from "./useDebouce";
 import { Category } from "@/constants/categories";
+import { BlogQuery } from "@/types/builder-types";
+import { useEffect } from "react";
 
 interface UseBlogsProps {
   page: number;
@@ -12,24 +14,18 @@ interface UseBlogsProps {
 }
 
 export const useBlogs = ({ page, limit, searchQuery, category }: UseBlogsProps) => {
+  // layout improvement: move to the top of the layout
+  useEffect(() => {
+    window.scrollTo({ top: 100, behavior: "smooth" });
+  }, [page]);
+
   // call debounce fn
   const debouncedSearchTerm = useDebounce(searchQuery, 500);
 
   return useQuery({
     queryKey: ["blogs", { page, limit, debouncedSearchTerm, category }],
     queryFn: async () => {
-      const query: {
-        [key: string]:
-          | string
-          | number
-          | boolean
-          | {
-              [key: string]: {
-                $regex: string;
-                $options: string;
-              };
-            }[];
-      } = {};
+      const query: BlogQuery = {};
 
       if (debouncedSearchTerm) {
         query["$or"] = [
@@ -48,7 +44,6 @@ export const useBlogs = ({ page, limit, searchQuery, category }: UseBlogsProps) 
         },
         query,
       });
-      
 
       const paginated = allBlogs.slice((page - 1) * limit, page * limit);
 

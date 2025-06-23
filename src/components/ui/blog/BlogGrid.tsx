@@ -1,6 +1,7 @@
 import BlogCard from "./BlogCard";
 import BlogCardSkeleton from "./BlogCardLoader";
 import { Blog } from "@/types/builder-types";
+import NotFound from "./NotFound";
 
 interface BlogGridProps {
   blogs: Blog[];
@@ -14,7 +15,7 @@ export default function BlogGrid({ blogs, isPending, variant = "primary" }: Blog
   }
 
   if (blogs.length === 0) {
-    return <h1 className="text-center">No Blogs Found</h1>;
+    return <NotFound />;
   }
 
   return (

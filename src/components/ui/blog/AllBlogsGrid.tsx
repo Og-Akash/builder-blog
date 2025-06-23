@@ -3,6 +3,7 @@ import BlogCardSkeleton from "./BlogCardLoader";
 import { useBlogFilters } from "@/hooks/FilterProvider";
 import { useBlogs } from "@/hooks/useBlogs";
 import Pagination from "./Pagination";
+import NotFound from "./NotFound";
 
 interface BlogGridProps {
   variant?: "primary" | "secondary";
@@ -22,10 +23,8 @@ export default function AllBlogsGrid({ variant = "primary" }: BlogGridProps) {
   }
 
   if (data && data.blogs.length === 0) {
-    return <div>No blogs found.</div>;
+    return <NotFound count={data.total} />;
   }
-console.log("Total blogs:", data?.total);
-
 
   return (
     <div className="flex flex-col gap-3">
