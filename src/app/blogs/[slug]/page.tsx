@@ -11,15 +11,15 @@ interface Props {
   }>;
 }
 
-export async function generateStaticParams() {
-  const blogs = await builder.getAll("blog", {
-    fields: "data.slug",
-  });
+// export async function generateStaticParams() {
+//   const blogs = await builder.getAll("blog", {
+//     fields: "data.slug",
+//   });
 
-  return blogs.map((blog) => ({
-    slug: blog.data?.slug,
-  }));
-}
+//   return blogs.map((blog) => ({
+//     slug: blog.data?.slug,
+//   }));
+// }
 
 export default async function BlogPage({ params }: Props) {
   const { slug } = await params;
