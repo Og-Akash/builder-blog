@@ -20,7 +20,7 @@ type TestimonialProps = {
 const Testimonial: React.FC<TestimonialProps> = ({ testimonials }) => {
   if (!testimonials?.length) return null;
 
-  const count = testimonials?.length || 0;
+const count = testimonials?.length || 0;
 
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-16">

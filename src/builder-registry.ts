@@ -3,6 +3,7 @@ import { builder, Builder } from "@builder.io/react";
 import CaseStudies from "./components/builder/Case";
 import Counter from "./components/builder/Counter/Counter";
 import FaqSection from "./components/builder/Faq/Faqs";
+import FooterUp from "./components/builder/FooterUp/Footerup";
 import Hero from "./components/builder/Hero";
 import Insights from "./components/builder/Insights";
 import Newsletter from "./components/builder/Newsletter/Newsletter";
@@ -113,6 +114,43 @@ Builder.registerComponent(Testimonial, {
         { name: "writer", type: "longText", defaultValue: "Akash Ghosh" },
         { name: "company", type: "test", defaultValue: "Weframe Tech" },
       ],
+    },
+  ],
+});
+
+Builder.registerComponent(FooterUp, {
+  name: "FooterUp",
+  inputs: [
+    {
+      name: "title",
+      type: "text",
+      defaultValue: "Schedule Your Consultation Today",
+    },
+    {
+      name: "description",
+      type: "text",
+      defaultValue:
+        "Weframe tech is the modern, award-winning platform that empowers some of the largest names in healthcare and advisory sectors.",
+    },
+    {
+      name: "inputPlaceholder",
+      type: "text",
+      defaultValue: "Enter your email",
+    },
+    {
+      name: "buttonText",
+      type: "text",
+      defaultValue: "Book a meeting",
+    },
+    {
+      name: "policyText",
+      type: "text",
+      defaultValue: "By submitting you agree to our privacy policy.",
+    },
+    {
+      name: "backgroundImage",
+      type: "file",
+      allowedFileTypes: ["jpeg", "jpg", "png", "webp"],
     },
   ],
 });

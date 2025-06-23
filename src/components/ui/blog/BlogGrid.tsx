@@ -1,15 +1,16 @@
 import { BuilderContent } from "@builder.io/sdk";
 import BlogCard from "./BlogCard";
+import BlogCardSkeleton from "../BlogCardLoader";
 
 interface BlogGridProps {
   blogs: BuilderContent[] | undefined;
   isPending: boolean;
-  variant? : "primary" | "secondary" 
+  variant?: "primary" | "secondary";
 }
 
-export default function BlogGrid({ blogs, isPending , variant = "primary" }: BlogGridProps) {
+export default function BlogGrid({ blogs, isPending, variant = "primary" }: BlogGridProps) {
   if (isPending) {
-    return <div>Loading...</div>;
+    return <BlogCardSkeleton />;
   }
 
   if (!blogs) {
@@ -19,7 +20,7 @@ export default function BlogGrid({ blogs, isPending , variant = "primary" }: Blo
   return (
     <div>
       {
-        <div className="max-w-6xl mx-auto grid gap-2 lg:gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
           {blogs?.map((blog) => {
             return (
               <BlogCard
