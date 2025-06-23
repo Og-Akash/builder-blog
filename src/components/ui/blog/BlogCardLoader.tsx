@@ -6,7 +6,7 @@ const BlogCardSkeleton = () => {
       {[...Array(3)].map((_, idx) => (
         <div
           key={idx}
-          className="animate-pulse flex flex-col space-y-4 rounded-md bg-white shadow p-3"
+          className="animate-pulse flex flex-col space-y-4 rounded-md shadow p-3"
         >
           <div className="h-[200px] w-full rounded-md bg-gray-200" />
 

@@ -10,9 +10,9 @@ const BaseLayout = ({ children }: { children: React.ReactNode }) => {
       <QueryClient>
         <Newsletter />
         <Header />
-        <main className="relative mx-auto flex min-h-screen flex-col overflow-hidden">
-          {children}
-        </main>
+          <main className="relative mx-auto flex min-h-screen flex-col overflow-hidden">
+            {children}
+          </main>
         <Footer />
       </QueryClient>
     </>

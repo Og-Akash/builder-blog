@@ -16,7 +16,7 @@ const Button = ({
   type = "button",
   ...props
 }: ButtonProps) => {
-  const baseStyles = "rounded-md font-medium transition";
+  const baseStyles = "rounded-md font-medium transition cursor-pointer";
 
   const variants = {
     solid: "bg-mint text-background",

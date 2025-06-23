@@ -14,7 +14,17 @@ export interface BlogData {
 
 export interface Blog {
   id: string;
-  data: BlogData[];
+  data: BlogData;
+}
+
+export interface BlogFilterContextProps {
+  isPending?: boolean;
+  selectedCategory: string;
+  setSelectedCategory: (category: string) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+  page: number;
+  setPage: (val: number) => void;
 }
 
 export interface Header {
@@ -26,16 +36,16 @@ export interface Header {
   }[];
 }
 export interface Footer {
- footerlinks: {
-  title:string;
-  footerlink: {
-    label:string;
-    url:string;
-  }[]
- }[];
- copyrightText: string;
- bottomlinks: {
-   lable:string;
-    url:string;
- }[]
+  footerlinks: {
+    title: string;
+    footerlink: {
+      label: string;
+      url: string;
+    }[];
+  }[];
+  copyrightText: string;
+  bottomlinks: {
+    lable: string;
+    url: string;
+  }[];
 }
